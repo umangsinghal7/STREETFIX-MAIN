@@ -1,0 +1,17 @@
+{
+  "name": "streetfix",
+  "version": "1.0.0",
+  "description": "FixMyStreet - Hyper-Local Governance Bridge",
+  "scripts": {
+    "server": "npm start --prefix server",
+    "server:dev": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+    "build": "npm run build --prefix client",
+    "install-all": "npm install && npm install --prefix server && npm install --prefix client",
+    "seed": "node server/seed.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -429,7 +429,7 @@ app.get("/api/health", (req, res) => {
 
 /* ================= START ================= */
 
-const PORT = 5000;
+const PORT = process.env.PORT  || 5000;
 
 connectDB().then(() => {
   app.listen(PORT, () => {

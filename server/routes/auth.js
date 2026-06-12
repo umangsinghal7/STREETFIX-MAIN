@@ -87,14 +87,14 @@ router.get(
   "/google/callback",
   passport.authenticate("google", {
     session: false,
-    failureRedirect: "http://localhost:5173/auth",
+    failureRedirect: "https://streetfix-mainumang.vercel.app/auth",
   }),
   (req, res) => {
     const token = createToken(req.user._id);
 
     res.redirect(
-      `http://localhost:5173/auth-success?token=${token}`,
-    );
+  `https://streetfix-mainumang.vercel.app/auth-success?token=${token}`,
+);
   },
 );
 

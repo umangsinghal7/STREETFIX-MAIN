@@ -93,7 +93,8 @@ function Input({ icon: Icon, type = "text", placeholder, value, onChange }) {
 
 function GoogleButton() {
   const googleLogin = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href =
+  "https://streetfix-main.onrender.com/api/auth/google";
   };
 
   return (

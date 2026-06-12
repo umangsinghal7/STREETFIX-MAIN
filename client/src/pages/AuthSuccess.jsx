@@ -19,7 +19,7 @@ export default function AuthSuccess() {
     localStorage.setItem("token", token);
     setToken(token);
 
-    fetch("http://localhost:5000/api/auth/me", {
+    fetch("https://streetfix-main.onrender.com/api/auth/me", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

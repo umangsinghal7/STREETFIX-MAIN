@@ -20,7 +20,10 @@ const JWT_SECRET = process.env.JWT_SECRET || "streetfix_dev_secret_key";
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://streetfix-mainumang.vercel.app",
+    ],
     credentials: true,
   })
 );
@@ -171,7 +174,7 @@ app.get(
   "/api/auth/google/callback",
   passport.authenticate("google", {
     session: false,
-    failureRedirect: "http://localhost:5173/auth",
+    failureRedirect: "https://streetfix-mainumang.vercel.app/auth",
   }),
   async (req, res) => {
     const token = jwt.sign(
@@ -181,8 +184,8 @@ app.get(
     );
 
     res.redirect(
-      `http://localhost:5173/auth-success?token=${token}`
-    );
+  `https://streetfix-mainumang.vercel.app/auth-success?token=${token}`
+);
   }
 );
 
